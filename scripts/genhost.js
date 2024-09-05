@@ -309,10 +309,14 @@ function generateHost() {
 
   /*Spider Block*/
   var juniorSpider = [
-    "B A R S W L I C ESS EDG" +
-      "<br>" +
-      "2 2 3 2 3 3 3 2 6.0   2" +
-      "<br>" +
+    "<table>" +
+      "<tr>" +
+      "<th>B</th><th>A</th><th>R</th><th>S</th><th>W</th><th>L</th><th>I</th><th>C</th><th>ESS</th><th>EDG</th>" +
+      "</tr>" +
+      "<tr>" +
+      "<td>2</td><td>2</td><td>3</td><td>2</td><td>3</td><td>3</td><td>3</td><td>2</td><td>6.0</td><td>2</td>" +
+      "</tr>" +
+      "</table>" +
       "<br>" +
       "Condition Monitor (P/S/M) 9/10/9" +
       "<br>" +
@@ -350,10 +354,14 @@ function generateHost() {
   ];
 
   var standardSpider = [
-    "B A R S W L I C ESS EDG" +
-      "<br>" +
-      "3 4 4 2 4 4 4 3 6.0   3" +
-      "<br>" +
+    "<table>" +
+      "<tr>" +
+      "<th>B</th><th>A</th><th>R</th><th>S</th><th>W</th><th>L</th><th>I</th><th>C</th><th>ESS</th><th>EDG</th>" +
+      "</tr>" +
+      "<tr>" +
+      "<td>3</td><td>4</td><td>4</td><td>2</td><td>4</td><td>4</td><td>4</td><td>3</td><td>6.0</td><td>3</td>" +
+      "</tr>" +
+      "</table>" +
       "<br>" +
       "Condition Monitor (P/S/M) 10/10/10" +
       "<br>" +
@@ -386,10 +394,14 @@ function generateHost() {
   ];
 
   var troubleshooterSpider = [
-    "B A R S W L I C ESS EDG" +
-      "<br>" +
-      "4 4 5 3 5 6 6 5 6.0  4" +
-      "<br>" +
+    "<table>" +
+      "<tr>" +
+      "<th>B</th><th>A</th><th>R</th><th>S</th><th>W</th><th>L</th><th>I</th><th>C</th><th>ESS</th><th>EDG</th>" +
+      "</tr>" +
+      "<tr>" +
+      "<td>4</td><td>4</td><td>5</td><td>3</td><td>5</td><td>6</td><td>6</td><td>5</td><td>6.0</td><td>4</td>" +
+      "</tr>" +
+      "</table>" +
       "<br>" +
       "Condition Monitor (P/S/M) 10/11/10" +
       "<br>" +
