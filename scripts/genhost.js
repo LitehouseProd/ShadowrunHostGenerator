@@ -18,26 +18,49 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  ****************************************************************************/
 
-function generateRatings(total) {
-  // We want four numbers whose sum equals the total
+function generateRatings(hostRating) {
+  var total = hostRating * 4 + 6;
   var ratings = [1, 1, 1, 1];
 
   // Adjust the total to account for the minimum rating of 1 for each
   var remainingTotal = total - 4; // since each rating is at least 1, we subtract 4 from total
 
-  // Generate 3 random split points between 0 and remainingTotal
-  var splitPoints = [];
-  for (var i = 0; i < 3; i++) {
-    splitPoints.push(Math.floor(Math.random() * remainingTotal));
-  }
-  // Sort the split points
-  splitPoints.sort((a, b) => a - b);
+  // Generate ratings with the preference that each stays within 3 points of hostRating
+  for (var i = 0; i < ratings.length; i++) {
+    // Calculate the min and max range for each rating
+    var minRating = Math.max(1, hostRating - 3);
+    var maxRating = Math.min(remainingTotal + 1, hostRating + 3);
 
-  // Calculate the differences between the split points to get the remaining distribution
-  ratings[0] += splitPoints[0];
-  ratings[1] += splitPoints[1] - splitPoints[0];
-  ratings[2] += splitPoints[2] - splitPoints[1];
-  ratings[3] += remainingTotal - splitPoints[2];
+    // Randomly select a value for this rating within the preferred min-max range
+    ratings[i] =
+      Math.floor(Math.random() * (maxRating - minRating + 1)) + minRating;
+
+    // Update the remaining total
+    remainingTotal -= ratings[i] - 1; // Subtract the value beyond the minimum
+  }
+
+  // Adjust if the sum of ratings doesn't match the total exactly
+  var sumRatings = ratings.reduce((a, b) => a + b, 0);
+  var difference = total - sumRatings;
+
+  // Adjust ratings while preferring the hostRating ± 3 range but allowing flexibility
+  while (difference !== 0) {
+    for (var i = 0; i < ratings.length && difference !== 0; i++) {
+      var minRating = 1; // Minimum possible rating is 1
+      var maxRating = remainingTotal + ratings[i]; // Can go beyond ±3 range if needed
+
+      // Increase the rating if we're below the total and within flexible bounds
+      if (difference > 0 && ratings[i] < maxRating) {
+        ratings[i]++;
+        difference--;
+      }
+      // Decrease the rating if we're above the total and within flexible bounds
+      else if (difference < 0 && ratings[i] > minRating) {
+        ratings[i]--;
+        difference++;
+      }
+    }
+  }
 
   return ratings;
 }
@@ -58,9 +81,8 @@ function generateHost() {
 
   /*Host Attribute Block*/
   // Calculate the total sum that the four ratings must equal
-  var total = rating * 4 + 6;
 
-  var assignedRating = generateRatings(total);
+  var assignedRating = generateRatings(rating);
 
   //Randomly assign to an attribute and remove from the array
   var firewall =
