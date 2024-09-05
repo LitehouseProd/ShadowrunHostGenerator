@@ -27,12 +27,32 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="https://lordeggnutz.com/css/old.school.style.css">
-<style>
-	div{text-align:center;}
-</style>
+        <style>
+          div { text-align: center; }
+  
+          /* Position the back button in the top-right corner */
+          .back-button {
+              position: absolute;
+              top: 10px;
+              right: 10px;
+              padding: 10px 20px;
+              background-color: #4CAF50; /* Green background */
+              color: white; /* White text */
+              border: none;
+              cursor: pointer;
+              font-size: 16px;
+          }
+  
+          .back-button:hover {
+              background-color: #45a049; /* Darker green on hover */
+          }
+      </style>
     </head>
 
 <body>
+  <div class="w3-container">
+    <button onclick="goBack()">Back to Main Page</button>
+  </div>
 <div class="w3-container"> 
   <h1>Shadowrun Run Generator v1.5</h1>
   <img src="images/shadowrun-logo.png" alt="Shadowrun Logo" class="center">
@@ -51,7 +71,7 @@
 </section>
 
 <div>
-<p>Issues and enhancements can be reported/requested <a href="https://github.com/LordEggNutz/Shadowrun.Generators/issues">here</a></p>
+<p>Issues and enhancements can be reported/requested <a href=https://github.com/LitehouseProd/ShadowrunHostGenerator/issues>here</a></p>
 <br>
 </div>
 
@@ -61,5 +81,11 @@
 <br>
 <br>
 </section>
+<script>
+  // Function to navigate back to index.html
+  function goBack() {
+      window.location.href = 'index.html';  // Replace with the correct path if needed
+  }
+</script>
 </body>
 </html>
