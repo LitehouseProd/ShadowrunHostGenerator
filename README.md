@@ -1,2 +1,2 @@
-# Role-Playing-Game-Generators
-I decided to combine all the generators that I have created for various RPGs into one repository.
+# Shadowrun Host Generators
+I have taken the Generators that are not Shadowrun related and removed them, then adjusted the files to have this as a github hosted website. You can find it at https://generator.shadowrunwiki.com
