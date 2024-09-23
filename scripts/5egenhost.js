@@ -643,14 +643,6 @@ function generateHost() {
     " " +
     rating +
     "<br>" +
-    "Firewall: " +
-    " " +
-    firewall +
-    "    " +
-    "Data Processing: " +
-    " " +
-    data +
-    "    " +
     "Attack: " +
     " " +
     attack +
@@ -658,6 +650,14 @@ function generateHost() {
     "Sleaze: " +
     " " +
     sleaze +
+    "    " +
+    "Data Processing: " +
+    " " +
+    data +
+    "    " +
+    "Firewall: " +
+    " " +
+    firewall +
     "    " +
     "<hr>" +
     "<u><b>IC Tray:</b></u>" +
