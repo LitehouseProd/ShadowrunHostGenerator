@@ -342,9 +342,6 @@ function generateHost() {
       "<br>" +
       "Condition Monitor (P/S/M) 9/10/9" +
       "<br>" +
-      "Limits Physical 3, Mental 4, Social 5" +
-      "<br>" +
-      "<br>" +
       "Matrix Initiative 8 + 3D6 (cold sim)" +
       "<br>" +
       "Matrix Damage Resistance 4" +
